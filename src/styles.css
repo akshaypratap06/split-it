@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+.bg-color {
+  background-color: #e3f2fd;
+}
+
+.row {
+  width: 100% !important;
+}
+
+.white {
+  color: white;
+}
+
+.black {
+  color: black;
+}
+
+.skyblue {
+  color: skyblue;
+}
+
+.grey {
+  color: grey;
+}

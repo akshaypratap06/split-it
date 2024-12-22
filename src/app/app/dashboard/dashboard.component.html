@@ -1,0 +1,51 @@
+<div class="row mt-2 skyblue">
+  <div class="col" style="font-size: 30px">Dashboard</div>
+  <div class="col text-end">
+    <button class="btn btn-primary m-2 p-1" (click)="openExpenseDialog()">
+      Add An Expense</button
+    ><button class="btn btn-primary m-2 p-1">Settle Up</button>
+  </div>
+</div>
+<div class="row mt-2 grey" style="border: 2px solid grey; border-radius: 10px">
+  <div
+    class="col p-0 d-flex justify-content-center flex-column align-items-center"
+    style="border-right: 1px solid grey"
+  >
+    <h6>Total Balance</h6>
+    <p class="m-0 skyblue">Money</p>
+  </div>
+  <div
+    class="col p-0 d-flex justify-content-center flex-column align-items-center"
+    style="border-left: 1px solid grey; border-right: 1px solid grey"
+  >
+    <h6>You Owe</h6>
+    <p class="m-0 skyblue">Money</p>
+  </div>
+  <div
+    class="col p-0 d-flex justify-content-center flex-column align-items-center"
+    style="border-left: 1px solid grey"
+  >
+    <h6>You are Owed</h6>
+    <p class="m-0 skyblue">Money</p>
+  </div>
+</div>
+<div class="row mt-4 grey">
+  <div class="col-6 d-flex flex-column">
+    <p>{{ "You Owe" | uppercase }}</p>
+    @for(item of owe;track item){
+    <p>
+      You owe <b class="skyblue">name</b> money <b class="skyblue">$1200</b>
+    </p>
+    }@empty {
+    <p>You don't owe anything</p>
+    }
+  </div>
+  <div class="col-6 d-flex flex-column text-end">
+    <p>{{ "You are Owed" | uppercase }}</p>
+    @for(item of owed;track item){
+    <p><b class="skyblue">Name</b> owe's money <b class="skyblue">$1200</b></p>
+    }@empty {
+    <p>You are not owed anything</p>
+    }
+  </div>
+</div>
