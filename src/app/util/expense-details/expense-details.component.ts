@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { DialogListComponent } from '../dialog-list/dialog-list.component';
-import { MatDialog } from '@angular/material/dialog';
 import { CurrencyListComponent } from '../../dialog/currency-list/currency-list.component';
 import { UserListComponent } from '../../dialog/user-list/user-list.component';
 import { PayeeDialogComponent } from '../../dialog/payee-dialog/payee-dialog.component';
@@ -9,6 +8,13 @@ import { provideNativeDateAdapter } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import {
+  MatDialog,
+  MatDialogActions,
+  MatDialogClose,
+  MatDialogContent,
+  MatDialogTitle,
+} from '@angular/material/dialog';
 @Component({
   selector: 'app-expense-details',
   standalone: true,
@@ -17,6 +23,10 @@ import { MatInputModule } from '@angular/material/input';
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatDialogClose,
   ],
   providers: [provideNativeDateAdapter()],
   templateUrl: './expense-details.component.html',
@@ -24,6 +34,9 @@ import { MatInputModule } from '@angular/material/input';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ExpenseDetailsComponent {
+  submitRequest() {
+    throw new Error('Method not implemented.');
+  }
   paidBy: any[] = ['You'];
   paidByString: any = 'You';
   paidFor: any[] = ['Aditya'];
