@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ExpensedialogComponent } from '../../expensedialog/expensedialog.component';
+import { ExpensedialogComponent } from '../../dialog/expensedialog/expensedialog.component';
+import { GroupExpenseDialogComponent } from '../../dialog/group-expense-dialog/group-expense-dialog.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -17,6 +18,9 @@ export class DashboardComponent {
   constructor(private dialog: MatDialog) {}
 
   openExpenseDialog() {
-    this.dialog.open(ExpensedialogComponent, {});
+    this.dialog.open(GroupExpenseDialogComponent, {
+      maxWidth: '80%',
+      width: '800px',
+    });
   }
 }
