@@ -1,0 +1,44 @@
+<app-user-list></app-user-list>
+<div class="row m-0 mt-2 mb-2">
+  <div class="col-12 text-center">
+    <button style="width: 90%" class="mx-auto" (click)="showMultiPeople()">
+      Multiple People
+    </button>
+  </div>
+</div>
+@if(showList){
+<div class="row m-0 mt-2 mb-2 skyblue">
+  <div class="col-4 text-center">
+    <button
+      [ngClass]="{ highlight: by == 'percent' }"
+      (click)="highlight('percent')"
+    >
+      Percentage
+    </button>
+  </div>
+  <div class="col-4 text-center" (click)="highlight('value')">
+    <button [ngClass]="{ highlight: by == 'value' }">Unequally</button>
+  </div>
+  <div class="col-4 text-center" (click)="highlight('equal')">
+    <button [ngClass]="{ highlight: by == 'equal' }">Equally</button>
+  </div>
+</div>
+<div class="row m-0 mt-2 mb-2 skyblue">
+  <div class="col-12">
+    @for(user of payee;track user){
+    <p class="ms-5 mt-1 p-0">{{ user.name }}</p>
+    <input
+      class="ms-5 m-0"
+      type="text"
+      [placeholder]="user.amount"
+      style="width: 70%"
+    />
+    }
+  </div>
+</div>
+<div class="row m-0 mt-2 mb-2 skyblue">
+  <div class="col-12 d-flex justify-content-center align-items-center">
+    <button type="submit" mat-dialog-close>Confirm</button>
+  </div>
+</div>
+}

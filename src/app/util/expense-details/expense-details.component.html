@@ -37,6 +37,17 @@
     </button>
     <div class="row m-0">
       <div class="col-4 d-flex justify-content-center align-items-center">
+        <label style="text-align: center; color: skyblue">Description</label>
+      </div>
+      <div class="col-8">
+        <input
+          type="text"
+          style="border: 2px solid skyblue; border-radius: 10px"
+        />
+      </div>
+    </div>
+    <div class="row m-0">
+      <div class="col-4 d-flex justify-content-center align-items-center">
         <label style="text-align: center; color: skyblue">Amount</label>
       </div>
       <div class="col-8">
@@ -51,7 +62,16 @@
 <div class="row m-0">
   <div class="col-12 d-flex justify-content-center align-items-center">
     <p class="grey">
-      Paid by <button (click)="openGroupNames()">{{ paidBy }}</button>
+      Paid by
+      <button (click)="openGroupNames()">{{ getPaidByString() }}</button>
+    </p>
+  </div>
+</div>
+<div class="row m-0">
+  <div class="col-12 d-flex justify-content-center align-items-center">
+    <p class="grey">
+      Paid For
+      <button (click)="openGroupNames()">{{ getPaidForString() }}</button>
     </p>
   </div>
 </div>
