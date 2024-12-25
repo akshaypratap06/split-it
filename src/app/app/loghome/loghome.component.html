@@ -29,6 +29,29 @@
         class="p-1 m-0"
       />
     </div>
+    <a class="m-1">All Transactions</a>
+    <div class="row m-0 mb-2 mt-2">
+      <div class="col-6 skyblue">Groups</div>
+      <div class="col-6 text-end"><a class="m-1">+add</a></div>
+      @for(group of groups;track group){
+      <a class="m-1">{{ "group name " + group }}</a>
+      }
+    </div>
+    <div class="row m-0 mt-2 mb-2">
+      <div class="col-6 skyblue">Friends</div>
+      <div class="col-6 text-end pe-2">
+        <button
+          style="border: none"
+          class="m-0 p-0 grey"
+          (click)="openAddFriend()"
+        >
+          +add
+        </button>
+      </div>
+      @for(friend of friends;track friend){
+      <a class="m-1">{{ friend }}</a>
+      }
+    </div>
   </div>
   <div class="col-8 col-md-4"><app-dashboard></app-dashboard></div>
 </div>

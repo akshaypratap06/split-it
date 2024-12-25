@@ -15,7 +15,7 @@ export class UserListComponent {
     return this.users;
   }
 
-  constructor(@Inject(MAT_DIALOG_DATA) public user: []) {
-    this.users = user;
-  }
+  // constructor(@Inject(MAT_DIALOG_DATA) public user: []) {
+  //   this.users = user;
+  // }
 }

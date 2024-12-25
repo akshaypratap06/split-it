@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogServiceService } from '../dialog-service.service';
 import { UserListComponent } from '../user-list/user-list.component';
+import { ExpenseDetailsComponent } from '../../util/expense-details/expense-details.component';
 
 @Component({
   selector: 'app-user-expense-dialog',
   standalone: true,
-  imports: [],
+  imports: [ExpenseDetailsComponent],
   templateUrl: './user-expense-dialog.component.html',
   styleUrl: './user-expense-dialog.component.css',
 })
