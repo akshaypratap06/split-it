@@ -5,6 +5,7 @@ import { ExpensedialogComponent } from '../../dialog/expensedialog/expensedialog
 import { GroupExpenseDialogComponent } from '../../dialog/group-expense-dialog/group-expense-dialog.component';
 import { UserExpenseDialogComponent } from '../../dialog/user-expense-dialog/user-expense-dialog.component';
 import { SettleUpComponent } from '../../dialog/settle-up/settle-up.component';
+import { DialogServiceService } from '../../dialog/dialog-service.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,13 +15,30 @@ import { SettleUpComponent } from '../../dialog/settle-up/settle-up.component';
   styleUrl: './dashboard.component.css',
 })
 export class DashboardComponent {
+  totalBalance: number = 0;
+  youOwe: number = 0;
+  youOwed: number = 0;
+  owe: any = {};
+  owed: any = {};
   openSettleDialog() {
     this.dialog.open(SettleUpComponent);
   }
-  owe: any[] = [1, 2, 3];
-  owed: any[] = [1, 2];
 
-  constructor(private dialog: MatDialog) {}
+  ngOnInit() {
+    this.dialogService.dashboardData$.subscribe((data) => {
+      console.log(data);
+      if (data == null) return;
+      this.totalBalance = data.total_balance_money;
+      this.youOwe = data.you_owe_money;
+      this.youOwed = data.you_owed_money;
+      this.owe = data.you_owe_map;
+      this.owed = data.you_owed_map;
+    });
+  }
+  constructor(
+    private dialog: MatDialog,
+    private dialogService: DialogServiceService
+  ) {}
 
   openExpenseDialog() {
     this.dialog.open(ExpensedialogComponent, {

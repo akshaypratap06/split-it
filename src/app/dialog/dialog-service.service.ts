@@ -31,9 +31,12 @@ export class DialogServiceService {
   private userData = new BehaviorSubject<any>({});
   userData$ = this.userData.asObservable();
   userName: string = 'akshay';
+  private dashboardData = new BehaviorSubject<any>(null);
+  dashboardData$ = this.dashboardData.asObservable();
 
   constructor(private http: HttpClient) {
     this.getCurrUser();
+    this.getDashboardData();
   }
 
   getCurrUser() {
@@ -63,6 +66,20 @@ export class DialogServiceService {
         },
         error: (err) => {
           console.error('PATCH error:', err);
+        },
+      });
+  }
+
+  getDashboardData() {
+    this.http
+      .get<any>('http://localhost:8080/v1/dashboard/report/' + this.userName)
+      .subscribe({
+        next: (response) => {
+          this.dashboardData.next(response); // Set the response to the variable
+          console.log('Dashboard Data:', response); // Optional: log the response for debugging
+        },
+        error: (err) => {
+          console.error('Error fetching Dashboard data:', err); // Handle errors
         },
       });
   }

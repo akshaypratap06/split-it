@@ -14,29 +14,30 @@
     style="border-right: 1px solid grey"
   >
     <h6>Total Balance</h6>
-    <p class="m-0 skyblue">Money</p>
+    <p class="m-0 skyblue">{{ totalBalance }}</p>
   </div>
   <div
     class="col p-0 d-flex justify-content-center flex-column align-items-center"
     style="border-left: 1px solid grey; border-right: 1px solid grey"
   >
     <h6>You Owe</h6>
-    <p class="m-0 skyblue">Money</p>
+    <p class="m-0 skyblue">{{ youOwe }}</p>
   </div>
   <div
     class="col p-0 d-flex justify-content-center flex-column align-items-center"
     style="border-left: 1px solid grey"
   >
     <h6>You are Owed</h6>
-    <p class="m-0 skyblue">Money</p>
+    <p class="m-0 skyblue">{{ youOwed }}</p>
   </div>
 </div>
 <div class="row mt-4 grey">
   <div class="col-6 d-flex flex-column">
     <p>{{ "You Owe" | uppercase }}</p>
-    @for(item of owe;track item){
+    @for(item of owe | keyvalue ;track item.key){
     <p>
-      You owe <b class="skyblue">name</b> money <b class="skyblue">$1200</b>
+      You owe <b class="skyblue">{{ item.key }}</b> money
+      <b class="skyblue">${{ item.value }}</b>
     </p>
     }@empty {
     <p>You don't owe anything</p>
@@ -44,8 +45,11 @@
   </div>
   <div class="col-6 d-flex flex-column text-end">
     <p>{{ "You are Owed" | uppercase }}</p>
-    @for(item of owed;track item){
-    <p><b class="skyblue">Name</b> owe's money <b class="skyblue">$1200</b></p>
+    @for(item of owed | keyvalue ;track item.key){
+    <p>
+      <b class="skyblue">{{ item.key }}</b> owe's money
+      <b class="skyblue">${{ item.value }}</b>
+    </p>
     }@empty {
     <p>You are not owed anything</p>
     }
