@@ -7,6 +7,23 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
   providedIn: 'root',
 })
 export class DialogServiceService {
+  addGroup(groupName: any, friendNames: string[]) {
+    friendNames[friendNames.length] = this.userName;
+    this.http
+      .post<any>('http://localhost:8080/v1/group', {
+        group_name: groupName,
+        users: friendNames,
+      })
+      .subscribe({
+        next: (response) => {
+          console.log('Post response:', response);
+          this.getCurrUser();
+        },
+        error: (err) => {
+          console.error('Post error:', err);
+        },
+      });
+  }
   private group = new BehaviorSubject<any>(null);
   group$ = this.group.asObservable();
   private user = new BehaviorSubject<any>(null);
@@ -16,6 +33,10 @@ export class DialogServiceService {
   userName: string = 'akshay';
 
   constructor(private http: HttpClient) {
+    this.getCurrUser();
+  }
+
+  getCurrUser() {
     this.http
       .get<any>('http://localhost:8080/v1/user/' + this.userName)
       .subscribe({

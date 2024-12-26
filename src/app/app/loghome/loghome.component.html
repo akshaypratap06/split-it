@@ -26,15 +26,27 @@
           border-top: 0;
           border-bottom: 0;
         "
+        [(ngModel)]="filterValue"
+        (ngModelChange)="onValueChange($event)"
         class="p-1 m-0"
       />
     </div>
     <a class="m-1">All Transactions</a>
     <div class="row m-0 mb-2 mt-2">
       <div class="col-6 skyblue">Groups</div>
-      <div class="col-6 text-end"><a class="m-1">+add</a></div>
-      @for(group of groups;track group){
-      <a class="m-1">{{ "group name " + group }}</a>
+      <div class="col-6 text-end pe-2">
+        <button
+          style="border: none"
+          class="m-0 p-0 grey"
+          (click)="openAddNewGroup()"
+        >
+          +add
+        </button>
+      </div>
+      @for(group of groupsTemp;track group){
+      <div class="d-flex align-items-center">
+        <img src="people.svg" /><a class="m-1">{{ group.group_name }}</a>
+      </div>
       }
     </div>
     <div class="row m-0 mt-2 mb-2">
@@ -48,8 +60,11 @@
           +add
         </button>
       </div>
-      @for(friend of friends;track friend){
-      <a class="m-1">{{ friend }}</a>
+      @for(friend of friendsTemp;track friend){
+      <div class="d-flex align-items-center">
+        <img src="person-fill.svg" /><a class="m-1">{{ friend }}</a>
+      </div>
+
       }
     </div>
   </div>
