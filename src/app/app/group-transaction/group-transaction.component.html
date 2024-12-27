@@ -1,0 +1,30 @@
+<div class="row mt-2 skyblue">
+  <div class="col" style="font-size: 30px">{{ groupName }}</div>
+  <div class="col text-end">
+    <button class="btn btn-primary m-2 p-1" (click)="openExpenseDialog()">
+      Add An Expense</button
+    ><button class="btn btn-primary m-2 p-1" (click)="openSettleDialog()">
+      Settle Up
+    </button>
+  </div>
+</div>
+<div class="row mt-2 grey" style="border: 2px solid grey; border-radius: 10px">
+  @for(owe of oweMap | splitKeyPipe ;track owe){
+  <p class="m-0 skyblue">
+    {{ owe.person2 }} owes {{ owe.amount }} to {{ owe.person1 }}
+  </p>
+  }
+</div>
+<div class="row mt-4 grey">
+  <div class="col-12 d-flex flex-column p-0">
+    @for(transaction of groupTransaction;track transaction){
+    <app-transaction
+      class="m-0 mt-1 mb-1"
+      [transaction]="transaction"
+      style="border: 2px solid grey; border-radius: 10px"
+    ></app-transaction
+    >}@empty {
+    <p>No transactions</p>
+    }
+  </div>
+</div>

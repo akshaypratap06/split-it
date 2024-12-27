@@ -7,6 +7,57 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
   providedIn: 'root',
 })
 export class DialogServiceService {
+  private group = new BehaviorSubject<any>(null);
+  group$ = this.group.asObservable();
+  private user = new BehaviorSubject<any>(null);
+  user$ = this.user.asObservable();
+  private userData = new BehaviorSubject<any>({});
+  userData$ = this.userData.asObservable();
+  userName: string = 'akshay';
+  private dashboardData = new BehaviorSubject<any>(null);
+  dashboardData$ = this.dashboardData.asObservable();
+  private friendData = new BehaviorSubject<any>(null);
+  friendData$ = this.friendData.asObservable();
+  private groupData = new BehaviorSubject<any>(null);
+  groupData$ = this.groupData.asObservable();
+
+  getFriendData(friendName: string) {
+    this.http
+      .get<any>(
+        'http://localhost:8080/v1/friend/report/' +
+          this.userName +
+          '/' +
+          friendName
+      )
+      .subscribe({
+        next: (response) => {
+          this.friendData.next(response); // Set the response to the variable
+          console.log('Friend Data:', response); // Optional: log the response for debugging
+        },
+        error: (err) => {
+          console.error('Error fetching Friend data:', err); // Handle errors
+        },
+      });
+  }
+
+  getGroupData(groupName: string) {
+    this.http
+      .get<any>(
+        'http://localhost:8080/v1/group/report/' +
+          groupName +
+          '/' +
+          this.userName
+      )
+      .subscribe({
+        next: (response) => {
+          this.groupData.next(response); // Set the response to the variable
+          console.log('Group Data:', response); // Optional: log the response for debugging
+        },
+        error: (err) => {
+          console.error('Error fetching Group data:', err); // Handle errors
+        },
+      });
+  }
   addGroup(groupName: any, friendNames: string[]) {
     friendNames[friendNames.length] = this.userName;
     this.http
@@ -24,15 +75,6 @@ export class DialogServiceService {
         },
       });
   }
-  private group = new BehaviorSubject<any>(null);
-  group$ = this.group.asObservable();
-  private user = new BehaviorSubject<any>(null);
-  user$ = this.user.asObservable();
-  private userData = new BehaviorSubject<any>({});
-  userData$ = this.userData.asObservable();
-  userName: string = 'akshay';
-  private dashboardData = new BehaviorSubject<any>(null);
-  dashboardData$ = this.dashboardData.asObservable();
 
   constructor(private http: HttpClient) {
     this.getCurrUser();

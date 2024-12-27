@@ -7,11 +7,19 @@ import { MatDialog } from '@angular/material/dialog';
 import { AddFriendsComponent } from '../../dialog/add-friends/add-friends.component';
 import { AddNewGroupComponent } from '../../dialog/add-new-group/add-new-group.component';
 import { FormsModule } from '@angular/forms';
+import { FriendTransactionComponent } from '../friend-transaction/friend-transaction.component';
+import { GroupTransactionComponent } from '../group-transaction/group-transaction.component';
 
 @Component({
   selector: 'app-loghome',
   standalone: true,
-  imports: [GroupsComponent, DashboardComponent, FormsModule],
+  imports: [
+    GroupsComponent,
+    DashboardComponent,
+    FormsModule,
+    FriendTransactionComponent,
+    GroupTransactionComponent,
+  ],
   templateUrl: './loghome.component.html',
   styleUrl: './loghome.component.css',
 })

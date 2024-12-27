@@ -42,8 +42,7 @@ export class DashboardComponent {
 
   openExpenseDialog() {
     this.dialog.open(ExpensedialogComponent, {
-      maxWidth: '80%',
-      width: '800px',
+      width: '400px',
     });
   }
 }
