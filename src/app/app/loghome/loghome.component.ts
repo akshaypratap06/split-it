@@ -9,6 +9,7 @@ import { AddNewGroupComponent } from '../../dialog/add-new-group/add-new-group.c
 import { FormsModule } from '@angular/forms';
 import { FriendTransactionComponent } from '../friend-transaction/friend-transaction.component';
 import { GroupTransactionComponent } from '../group-transaction/group-transaction.component';
+import { AllTransactionComponent } from '../all-transaction/all-transaction.component';
 
 @Component({
   selector: 'app-loghome',
@@ -19,6 +20,7 @@ import { GroupTransactionComponent } from '../group-transaction/group-transactio
     FormsModule,
     FriendTransactionComponent,
     GroupTransactionComponent,
+    AllTransactionComponent,
   ],
   templateUrl: './loghome.component.html',
   styleUrl: './loghome.component.css',

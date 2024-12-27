@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogServiceService } from '../../dialog/dialog-service.service';
 import { ExpensedialogComponent } from '../../dialog/expensedialog/expensedialog.component';

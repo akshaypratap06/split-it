@@ -20,7 +20,21 @@ export class DialogServiceService {
   friendData$ = this.friendData.asObservable();
   private groupData = new BehaviorSubject<any>(null);
   groupData$ = this.groupData.asObservable();
-
+  private allTransaction = new BehaviorSubject<any>(null);
+  allTransaction$ = this.allTransaction.asObservable();
+  getAllTransaction() {
+    this.http
+      .get<any>('http://localhost:8080/v1/all/report/' + this.userName)
+      .subscribe({
+        next: (response) => {
+          this.allTransaction.next(response); // Set the response to the variable
+          console.log('Friend Data:', response); // Optional: log the response for debugging
+        },
+        error: (err) => {
+          console.error('Error fetching Friend data:', err); // Handle errors
+        },
+      });
+  }
   getFriendData(friendName: string) {
     this.http
       .get<any>(
