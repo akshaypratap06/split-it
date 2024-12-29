@@ -9,7 +9,7 @@ import { FriendTransactionComponent } from '../friend-transaction/friend-transac
 @Component({
   selector: 'app-all-transaction',
   standalone: true,
-  imports: [FriendTransactionComponent, TransactionComponent],
+  imports: [TransactionComponent],
   templateUrl: './all-transaction.component.html',
   styleUrl: './all-transaction.component.css',
 })
