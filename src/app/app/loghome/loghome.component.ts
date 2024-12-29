@@ -1,27 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { GroupsComponent } from '../../groups/groups.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { HttpClient } from '@angular/common/http';
-import { DialogServiceService } from '../../dialog/dialog-service.service';
 import { MatDialog } from '@angular/material/dialog';
-import { AddFriendsComponent } from '../../dialog/add-friends/add-friends.component';
-import { AddNewGroupComponent } from '../../dialog/add-new-group/add-new-group.component';
+import { AddNewGroupComponent } from '../../finalComponent/dialogs/add-new-group/add-new-group.component';
 import { FormsModule } from '@angular/forms';
 import { FriendTransactionComponent } from '../friend-transaction/friend-transaction.component';
 import { GroupTransactionComponent } from '../group-transaction/group-transaction.component';
 import { AllTransactionComponent } from '../all-transaction/all-transaction.component';
+import { AddFriendsComponent } from '../../finalComponent/dialogs/add-friends/add-friends.component';
+import { DialogServiceService } from '../../dialog-service.service';
+import { RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-loghome',
   standalone: true,
-  imports: [
-    GroupsComponent,
-    DashboardComponent,
-    FormsModule,
-    FriendTransactionComponent,
-    GroupTransactionComponent,
-    AllTransactionComponent,
-  ],
+  imports: [RouterOutlet, FormsModule, GroupTransactionComponent, RouterModule],
   templateUrl: './loghome.component.html',
   styleUrl: './loghome.component.css',
 })
@@ -47,15 +40,17 @@ export class LoghomeComponent implements OnInit {
     this.dialog.open(AddFriendsComponent);
   }
   ngOnInit(): void {
-    this.dialogService.userData$.subscribe((data) => {
-      console.log(data);
-      if (data == null) return;
-      this.friends = data.friends;
-      this.groups = data.groups;
-      this.friendsTemp = this.friends;
-      this.groupsTemp = this.groups;
-      // Log the response to the console
-    });
+    this.dialogService.userData$.subscribe(
+      (data: { friends: any[]; groups: any[] } | null) => {
+        console.log(data);
+        if (data == null) return;
+        this.friends = data.friends;
+        this.groups = data.groups;
+        this.friendsTemp = this.friends;
+        this.groupsTemp = this.groups;
+        // Log the response to the console
+      }
+    );
   }
   constructor(
     private dialogService: DialogServiceService,

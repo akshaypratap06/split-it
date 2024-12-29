@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
-import { DialogServiceService } from '../dialog-service.service';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject } from '@angular/core';
+import {
+  MAT_DIALOG_DATA,
+  MatDialog,
+  MatDialogRef,
+} from '@angular/material/dialog';
 import { DialogListComponent } from '../../util/dialog-list/dialog-list.component';
-import { group } from '@angular/animations';
-import { GroupsComponent } from '../../groups/groups.component';
+import { DialogServiceService } from '../../dialog-service.service';
 
 @Component({
   selector: 'app-group-list',
@@ -13,8 +15,21 @@ import { GroupsComponent } from '../../groups/groups.component';
   styleUrl: './group-list.component.css',
 })
 export class GroupListComponent {
-  groups: any[] = [1, 2, 3];
+  groupsName: string[] = [];
+  type: string = 'group';
+
   getGroups(): any[] {
-    return this.groups;
+    return this.groupsName;
   }
+
+  ngOnInit() {
+    this.groupsName = this.data.map(
+      (p: { group_name: string }) => p.group_name
+    );
+  }
+
+  constructor(
+    private dialogService: DialogServiceService,
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) {}
 }

@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogServiceService } from '../../dialog/dialog-service.service';
-import { ExpensedialogComponent } from '../../dialog/expensedialog/expensedialog.component';
+import { ExpensedialogComponent } from '../../finalComponent/dialogs/expensedialog/expensedialog.component';
 import { SettleUpComponent } from '../../dialog/settle-up/settle-up.component';
 import { TransactionComponent } from '../transaction/transaction.component';
+import { DialogServiceService } from '../../dialog-service.service';
+import { ActivatedRoute } from '@angular/router';
 
 interface FriendTransaction {
   description: string;
@@ -27,7 +28,10 @@ export class FriendTransactionComponent {
   friendTransaction: FriendTransaction[] = [];
   youOwed: string = '';
   ngOnInit() {
-    this.dialogService.getFriendData('pratap');
+    this.route.params.subscribe((params) => {
+      this.friendName = params['userId'];
+      this.dialogService.getFriendData(this.friendName); // Access the `id` parameter
+    });
     this.dialogService.friendData$.subscribe((data) => {
       if (data == null) return;
       this.friendName = data.friend_name;
@@ -39,7 +43,8 @@ export class FriendTransactionComponent {
 
   constructor(
     private dialog: MatDialog,
-    private dialogService: DialogServiceService
+    private dialogService: DialogServiceService,
+    private route: ActivatedRoute
   ) {}
 
   openExpenseDialog() {
@@ -48,6 +53,12 @@ export class FriendTransactionComponent {
     });
   }
   openSettleDialog() {
-    this.dialog.open(SettleUpComponent);
+    this.dialog.open(SettleUpComponent, {
+      data: {
+        type: 'all',
+        user: this.dialogService.userName,
+        friend: this.friendName,
+      },
+    });
   }
 }

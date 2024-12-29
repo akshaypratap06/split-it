@@ -8,17 +8,15 @@
     </button>
   </div>
 </div>
-<div class="row mt-2 grey" style="border: 2px solid grey; border-radius: 10px">
+<div class="row mt-2 grey border">
   <div
-    class="col p-0 d-flex justify-content-center flex-column align-items-center"
-    style="border-right: 1px solid grey"
+    class="col border p-0 d-flex justify-content-center flex-column align-items-center"
   >
     <h6>You Owe</h6>
     <p class="m-0 skyblue">{{ youOwe }}</p>
   </div>
   <div
-    class="col p-0 d-flex justify-content-center flex-column align-items-center"
-    style="border-left: 1px solid grey"
+    class="col border p-0 d-flex justify-content-center flex-column align-items-center"
   >
     <h6>You are Owed</h6>
     <p class="m-0 skyblue">{{ youOwed }}</p>
@@ -28,9 +26,8 @@
   <div class="col-12 d-flex flex-column p-0">
     @for(transaction of allTransaction;track transaction){
     <app-transaction
-      class="m-0 mt-1 mb-1"
+      class="m-0 mt-1 mb-1 border"
       [transaction]="transaction"
-      style="border: 2px solid grey; border-radius: 10px"
     ></app-transaction
     >}@empty {
     <p>No transactions</p>

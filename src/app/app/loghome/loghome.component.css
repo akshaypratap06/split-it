@@ -2,3 +2,7 @@ a {
   color: grey;
   text-decoration: none;
 }
+
+.active {
+  color: blue;
+}

@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, Input } from '@angular/core';
 import { DialogListComponent } from '../../util/dialog-list/dialog-list.component';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
@@ -10,12 +10,17 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrl: './user-list.component.css',
 })
 export class UserListComponent {
-  users: any[] = [4, 5, 6];
+  @Input()
+  users!: any[];
+  type: string = 'user';
+  @Input()
+  secondaryType: any;
+
   getUsers(): any[] {
     return this.users;
   }
 
-  // constructor(@Inject(MAT_DIALOG_DATA) public user: []) {
-  //   this.users = user;
-  // }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
+    this.users = this.data;
+  }
 }

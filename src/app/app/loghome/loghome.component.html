@@ -1,7 +1,9 @@
 <div class="row">
   <div class="col-2 col-md-2 offset-md-2 d-flex flex-column">
-    <a class="m-1">Dashboard</a>
-    <a class="m-1">Notifications</a>
+    <a [routerLink]="['/dashboard']" routerLinkActive="active" class="m-1"
+      >Dashboard</a
+    >
+    <!-- <a class="m-1">Notifications</a> -->
     <div class="m-1" style="border: 2px solid grey; border-radius: 5px">
       <svg
         style="width: 10%"
@@ -31,7 +33,9 @@
         class="p-1 m-0"
       />
     </div>
-    <a class="m-1">All Transactions</a>
+    <a class="m-1" [routerLink]="['/all']" routerLinkActive="active"
+      >All Transactions</a
+    >
     <div class="row m-0 mb-2 mt-2">
       <div class="col-6 skyblue">Groups</div>
       <div class="col-6 text-end pe-2">
@@ -45,7 +49,12 @@
       </div>
       @for(group of groupsTemp;track group){
       <div class="d-flex align-items-center">
-        <img src="people.svg" /><a class="m-1">{{ group.group_name }}</a>
+        <a
+          class="m-1"
+          [routerLink]="['/group/', group.group_name]"
+          routerLinkActive="active"
+          ><img src="people.svg" />{{ group.group_name }}</a
+        >
       </div>
       }
     </div>
@@ -62,13 +71,18 @@
       </div>
       @for(friend of friendsTemp;track friend){
       <div class="d-flex align-items-center">
-        <img src="person-fill.svg" /><a class="m-1">{{ friend }}</a>
+        <a
+          class="m-1"
+          [routerLink]="['/friend/' + friend]"
+          routerLinkActive="active"
+          ><img src="person-fill.svg" />{{ friend }}</a
+        >
       </div>
 
       }
     </div>
   </div>
   <div class="col-8 col-md-4">
-    <app-all-transaction></app-all-transaction>
+    <router-outlet></router-outlet>
   </div>
 </div>
