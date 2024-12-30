@@ -6,11 +6,12 @@ import { GroupExpenseDialogComponent } from '../../dialog/group-expense-dialog/g
 import { UserExpenseDialogComponent } from '../../dialog/user-expense-dialog/user-expense-dialog.component';
 import { SettleUpComponent } from '../../dialog/settle-up/settle-up.component';
 import { DialogServiceService } from '../../dialog-service.service';
+import { TitlePipe } from '../../title.pipe';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TitlePipe],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
 })

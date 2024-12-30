@@ -7,11 +7,18 @@ import { SplitKeyPipePipe } from '../../util/split-key-pipe.pipe';
 import { TransactionComponent } from '../transaction/transaction.component';
 import { DialogServiceService } from '../../dialog-service.service';
 import { ActivatedRoute, RouterModule } from '@angular/router';
+import { TitlePipe } from '../../title.pipe';
 
 @Component({
   selector: 'app-group-transaction',
   standalone: true,
-  imports: [CommonModule, SplitKeyPipePipe, TransactionComponent, RouterModule],
+  imports: [
+    CommonModule,
+    SplitKeyPipePipe,
+    TransactionComponent,
+    RouterModule,
+    TitlePipe,
+  ],
   templateUrl: './group-transaction.component.html',
   styleUrl: './group-transaction.component.css',
 })

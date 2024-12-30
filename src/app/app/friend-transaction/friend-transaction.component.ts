@@ -5,6 +5,7 @@ import { SettleUpComponent } from '../../dialog/settle-up/settle-up.component';
 import { TransactionComponent } from '../transaction/transaction.component';
 import { DialogServiceService } from '../../dialog-service.service';
 import { ActivatedRoute } from '@angular/router';
+import { TitlePipe } from '../../title.pipe';
 
 interface FriendTransaction {
   description: string;
@@ -18,7 +19,7 @@ interface FriendTransaction {
 @Component({
   selector: 'app-friend-transaction',
   standalone: true,
-  imports: [TransactionComponent],
+  imports: [TransactionComponent, TitlePipe],
   templateUrl: './friend-transaction.component.html',
   styleUrl: './friend-transaction.component.css',
 })

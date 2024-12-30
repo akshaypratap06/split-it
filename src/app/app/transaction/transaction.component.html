@@ -1,11 +1,20 @@
 <div class="row m-0" (click)="onClick()">
   <div class="col-8 d-flex flex-column justify-content-around">
-    <h4 class="m-0">{{ transaction.description }}</h4>
-    <p class="m-0 mt-2">{{ transaction.date_time }}</p>
+    <h4 class="m-0 skyblue">
+      Desc:
+      <span class="grey">{{ transaction.description }}</span>
+    </h4>
+    <p class="m-0 mt-2">
+      {{ transaction.date_time }}
+    </p>
   </div>
   <div class="col-4 d-flex flex-column justify-content-around">
-    <div>You Owe: {{ transaction.you_owe }}</div>
-    <div>You Are Owed: {{ transaction.you_owed }}</div>
+    <div>
+      You Owe:<b class="coral">{{ transaction.you_owe }}</b>
+    </div>
+    <div>
+      You Are Owed: <b class="skyblue">{{ transaction.you_owed }}</b>
+    </div>
   </div>
 </div>
 @if(openTab){
@@ -13,14 +22,20 @@
 <div class="row m-0">
   <div class="col-6 m-0">
     @for(pay of transaction.paid_by | keyvalue ; track pay.key){
-    <p>{{ pay.key }} paid amount {{ pay.value }}</p>
+    <p>
+      <span style="color: black">{{ pay.key | title }}</span> paid amount
+      <span style="color: black">{{ pay.value }}</span>
+    </p>
     }@empty {
     <p>No one paid anything</p>
     }
   </div>
   <div class="col-6 m-0 text-end">
     @for(pay of transaction.paid_for | keyvalue ; track pay.key){
-    <p>{{ pay.key }} took amount {{ pay.value }}</p>
+    <p>
+      <span style="color: black">{{ pay.key | title }}</span> took amount
+      <span style="color: black">{{ pay.value }}</span>
+    </p>
     }@empty {
     <p>No one took anything</p>
     }

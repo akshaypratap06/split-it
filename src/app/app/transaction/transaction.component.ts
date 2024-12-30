@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { TitlePipe } from '../../title.pipe';
 interface FriendTransaction {
   description: string;
   date_time: string;
@@ -12,7 +13,7 @@ interface FriendTransaction {
 @Component({
   selector: 'app-transaction',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TitlePipe],
   templateUrl: './transaction.component.html',
   styleUrl: './transaction.component.css',
 })

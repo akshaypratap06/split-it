@@ -1,9 +1,9 @@
-<div class="row mt-2 skyblue">
-  <div class="col" style="font-size: 30px">Dashboard</div>
+<div class="row mt-2 darkBlue">
+  <div class="col" style="font-size: 30px"><b>Dashboard</b></div>
   <div class="col text-end">
-    <button class="btn btn-primary m-2 p-1" (click)="openExpenseDialog()">
+    <button class="button-cls m-2 p-1" (click)="openExpenseDialog()">
       Add An Expense</button
-    ><button class="btn btn-primary m-2 p-1" (click)="openSettleDialog()">
+    ><button class="button-cls2 m-2 p-1" (click)="openSettleDialog()">
       Settle Up
     </button>
   </div>
@@ -14,41 +14,52 @@
     style="border-right: 1px solid grey"
   >
     <h6>Total Balance</h6>
-    <p class="m-0 skyblue">{{ totalBalance }}</p>
+    <p class="m-0 skyblue">
+      <b>{{ totalBalance }}</b>
+    </p>
   </div>
   <div
     class="col p-0 d-flex justify-content-center flex-column align-items-center"
     style="border-left: 1px solid grey; border-right: 1px solid grey"
   >
     <h6>You Owe</h6>
-    <p class="m-0 skyblue">{{ youOwe }}</p>
+    <p class="m-0 coral">
+      <b>{{ youOwe }}</b>
+    </p>
   </div>
   <div
     class="col p-0 d-flex justify-content-center flex-column align-items-center"
     style="border-left: 1px solid grey"
   >
     <h6>You are Owed</h6>
-    <p class="m-0 skyblue">{{ youOwed }}</p>
+    <p class="m-0 skyblue">
+      <b>{{ youOwed }}</b>
+    </p>
   </div>
 </div>
-<div class="row mt-4 grey">
-  <div class="col-6 d-flex flex-column">
-    <p>{{ "You Owe" | uppercase }}</p>
+<div class="row mt-4 grey border2px">
+  <div class="col-6 d-flex flex-column" style="border-right: 1px solid grey">
+    <p>
+      <b>YOU OWE</b>
+    </p>
     @for(item of owe | keyvalue ;track item.key){
     <p>
-      You owe <b class="skyblue">{{ item.key }}</b> money
-      <b class="skyblue">${{ item.value }}</b>
+      You owe <b class="coral">{{ item.key | title }}</b> money
+      <b class="coral">{{ item.value }}</b>
     </p>
     }@empty {
     <p>You don't owe anything</p>
     }
   </div>
-  <div class="col-6 d-flex flex-column text-end">
-    <p>{{ "You are Owed" | uppercase }}</p>
+  <div
+    class="col-6 d-flex flex-column text-end"
+    style="border-left: 1px solid grey"
+  >
+    <p><b>YOU ARE OWED</b></p>
     @for(item of owed | keyvalue ;track item.key){
     <p>
-      <b class="skyblue">{{ item.key }}</b> owe's money
-      <b class="skyblue">${{ item.value }}</b>
+      <b class="skyblue">{{ item.key | title }}</b> owe's money
+      <b class="skyblue">{{ item.value | title }}</b>
     </p>
     }@empty {
     <p>You are not owed anything</p>

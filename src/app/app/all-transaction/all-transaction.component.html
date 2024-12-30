@@ -1,32 +1,38 @@
-<div class="row mt-2 skyblue">
-  <div class="col" style="font-size: 30px">All Transactions</div>
+<div class="row mt-2 darkBlue">
+  <div class="col" style="font-size: 30px"><b>All Transactions</b></div>
   <div class="col text-end">
-    <button class="btn btn-primary m-2 p-1" (click)="openExpenseDialog()">
+    <button class="button-cls m-2 p-1" (click)="openExpenseDialog()">
       Add An Expense</button
-    ><button class="btn btn-primary m-2 p-1" (click)="openSettleDialog()">
+    ><button class="button-cls2 m-2 p-1" (click)="openSettleDialog()">
       Settle Up
     </button>
   </div>
 </div>
-<div class="row mt-2 grey border">
+<div class="row mt-2 grey border2px">
   <div
-    class="col border p-0 d-flex justify-content-center flex-column align-items-center"
+    class="col p-0 d-flex justify-content-center flex-column align-items-center"
+    style="border-right: 1px solid grey"
   >
-    <h6>You Owe</h6>
-    <p class="m-0 skyblue">{{ youOwe }}</p>
+    <h6><b>You Owe</b></h6>
+    <p class="m-0 coral">
+      <b>{{ youOwe }}</b>
+    </p>
   </div>
   <div
-    class="col border p-0 d-flex justify-content-center flex-column align-items-center"
+    class="col p-0 d-flex justify-content-center flex-column align-items-center"
+    style="border-left: 1px solid grey"
   >
-    <h6>You are Owed</h6>
-    <p class="m-0 skyblue">{{ youOwed }}</p>
+    <h6><b>You are Owed</b></h6>
+    <p class="m-0 skyblue">
+      <b>{{ youOwed }}</b>
+    </p>
   </div>
 </div>
 <div class="row mt-4 grey">
   <div class="col-12 d-flex flex-column p-0">
     @for(transaction of allTransaction;track transaction){
     <app-transaction
-      class="m-0 mt-1 mb-1 border"
+      class="m-0 mt-1 mb-1 border2px"
       [transaction]="transaction"
     ></app-transaction
     >}@empty {

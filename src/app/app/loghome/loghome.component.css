@@ -5,4 +5,7 @@ a {
 
 .active {
   color: skyblue;
+  border-left: 10px solid skyblue;
+  padding-left: 10px;
+  font-size: 20px;
 }

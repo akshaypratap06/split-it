@@ -1,9 +1,11 @@
-<div class="row mt-2 skyblue">
-  <div class="col" style="font-size: 30px">{{ friendName }}</div>
+<div class="row mt-2 darkBlue">
+  <div class="col coral" style="font-size: 30px">
+    <b>{{ friendName | title }}</b>
+  </div>
   <div class="col text-end">
-    <button class="btn btn-primary m-2 p-1" (click)="openExpenseDialog()">
+    <button class="button-cls m-2 p-1" (click)="openExpenseDialog()">
       Add An Expense</button
-    ><button class="btn btn-primary m-2 p-1" (click)="openSettleDialog()">
+    ><button class="button-cls2 m-2 p-1" (click)="openSettleDialog()">
       Settle Up
     </button>
   </div>
@@ -13,15 +15,19 @@
     class="col p-0 d-flex justify-content-center flex-column align-items-center"
     style="border-right: 1px solid grey"
   >
-    <h6>You Owe</h6>
-    <p class="m-0 skyblue">{{ youOwe }}</p>
+    <h6><b>You Owe</b></h6>
+    <p class="m-0 coral">
+      <b>{{ youOwe }}</b>
+    </p>
   </div>
   <div
     class="col p-0 d-flex justify-content-center flex-column align-items-center"
     style="border-left: 1px solid grey"
   >
-    <h6>You are Owed</h6>
-    <p class="m-0 skyblue">{{ youOwed }}</p>
+    <h6><b>You are Owed</b></h6>
+    <p class="m-0 skyblue">
+      <b>{{ youOwed }}</b>
+    </p>
   </div>
 </div>
 <div class="row mt-4 grey">

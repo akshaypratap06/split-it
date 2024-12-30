@@ -23,11 +23,17 @@
   color: grey;
 }
 
-.border {
+.border2px {
   border: 2px solid grey;
   border-radius: 10px;
 }
 
-.theme-color1 {
+.coral {
   color: #f08080;
+}
+.teal {
+  color: #46998fc4;
+}
+.darkBlue {
+  color: #7db3fa;
 }
