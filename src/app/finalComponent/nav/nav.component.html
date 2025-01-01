@@ -4,7 +4,7 @@
       class="navbar navbar-expand-lg navbar-light"
       style="background-color: skyblue"
     >
-      <a class="navbar-brand" href="#" style="padding-left: 3%">
+      <a class="navbar-brand" [routerLink]="['/home']" style="padding-left: 3%">
         <h1 style="color: #e3f2fd">Split It</h1>
       </a>
       <button
@@ -21,30 +21,48 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto align-items-center">
           <li class="nav-item active">
-            <a class="nav-link" href="#" style="color: whitesmoke">Home</a>
+            <a
+              class="nav-link"
+              [routerLink]="['/home']"
+              routerLinkActive="router-link-active"
+              style="color: whitesmoke"
+              >Home</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" style="color: whitesmoke">Features</a>
+            <a
+              class="nav-link"
+              [routerLink]="['/home']"
+              style="color: whitesmoke"
+              >Features</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" style="color: whitesmoke"
+            <a
+              class="nav-link"
+              [routerLink]="['/home']"
+              style="color: whitesmoke"
               >Contact Us</a
             >
           </li>
           <li class="nav-item">
-            <button
-              class="btn btn-primary btn-outline-primary btn-sm p-1 m-1"
-              style="width: 80px"
-            >
-              <a class="nav-link" href="#" style="color: whitesmoke">Sign In</a>
+            <button class="darkBlueBorder btn-sm p-0 m-1">
+              <a
+                class="nav-link"
+                [routerLink]="['/sign-in']"
+                style="color: whitesmoke"
+                >Sign In</a
+              >
             </button>
           </li>
           <li class="nav-item">
-            <button
-              class="btn btn-outline-primary btn-sm p-1 m-1"
-              style="width: 80px"
-            >
-              <a class="nav-link" href="#" style="color: whitesmoke">Sign Up</a>
+            <button class="darkBlueBorderOutline btn-sm p-0 m-1">
+              <a
+                class="nav-link"
+                [routerLink]="['/sign-up']"
+                style="color: #4a93f1"
+                >Sign Up</a
+              >
             </button>
           </li>
         </ul>

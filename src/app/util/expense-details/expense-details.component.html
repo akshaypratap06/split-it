@@ -37,27 +37,27 @@
     </button> -->
     <div class="row m-0 mt-2">
       <div class="col-4 p-0 m-0">
-        <label style="color: skyblue">Description</label>
+        <label class="skyblue"><b>Description</b></label>
       </div>
       <div class="col-8">
         <input
           type="text"
-          style="border: 2px solid skyblue; border-radius: 10px"
           [(ngModel)]="description2"
           placeholder="Enter Description"
+          style="color: #111"
         />
       </div>
     </div>
     <div class="row m-0 mt-2">
       <div class="col-4 p-0 m-0">
-        <label style="color: skyblue">Amount</label>
+        <label style="color: skyblue"><b>Amount</b></label>
       </div>
       <div class="col-8">
         <input
           type="text"
-          style="border: 2px solid skyblue; border-radius: 10px"
           [(ngModel)]="amount"
-          placeholder="Enter Amount"
+          placeholder="0.00"
+          style="color: #111"
           (keyup)="formatToTwoDecimalPlaces()"
         />
       </div>
@@ -66,12 +66,9 @@
 </div>
 <div class="row m-0">
   <div class="col-12 d-flex justify-content-center align-items-center">
-    <p class="grey">
+    <p style="color: charcoal">
       Paid by
-      <button
-        (click)="openGroupNames('paidBy')"
-        style="border: 2px solid grey; border-radius: 10px"
-      >
+      <button (click)="openGroupNames('paidBy')" class="darkBlueBorderOutline">
         {{ paidByString }}
       </button>
     </p>
@@ -79,13 +76,10 @@
 </div>
 <div class="row m-0">
   <div class="col-12 d-flex justify-content-center align-items-center">
-    <p class="grey">
+    <p style="color: charcoal">
       Paid For
-      <button
-        (click)="openGroupNames('paidFor')"
-        style="border: 2px solid grey; border-radius: 10px"
-      >
-        {{ getPaidForString() }}
+      <button (click)="openGroupNames('paidFor')" class="darkBlueBorderOutline">
+        {{ paidForString }}
       </button>
     </p>
   </div>
@@ -108,9 +102,10 @@
       type="submit"
       (click)="submitRequest()"
       mat-dialog-close
-      style="border: 2px solid grey; border-radius: 10px"
+      class="coralBorderOutline"
+      style="width: 95%"
     >
-      Submit
+      Add Expense
     </button>
   </div>
 </div>

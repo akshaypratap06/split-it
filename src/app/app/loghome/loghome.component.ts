@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
-import { AddNewGroupComponent } from '../../finalComponent/dialogs/add-new-group/add-new-group.component';
+import { AddNewGroupComponent } from '../../dialog/add-new-group/add-new-group.component';
 import { FormsModule } from '@angular/forms';
 import { FriendTransactionComponent } from '../friend-transaction/friend-transaction.component';
 import { GroupTransactionComponent } from '../group-transaction/group-transaction.component';
 import { AllTransactionComponent } from '../all-transaction/all-transaction.component';
-import { AddFriendsComponent } from '../../finalComponent/dialogs/add-friends/add-friends.component';
+import { AddFriendsComponent } from '../../dialog/add-friends/add-friends.component';
 import { DialogServiceService } from '../../dialog-service.service';
 import { RouterModule, RouterOutlet } from '@angular/router';
 

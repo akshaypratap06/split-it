@@ -1,0 +1,21 @@
+input:focus {
+  border: 2px solid #f08080 !important;
+  border-radius: 10px;
+  /* background-color: red; */
+  /* box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); */
+  outline: none !important;
+  color: skyblue;
+}
+
+input {
+  border: 2px solid skyblue !important;
+  border-radius: 10px;
+  outline: none !important;
+  color: #f08080;
+}
+
+.darkBlueBorder {
+  border: 2px solid #7db3fa !important;
+  color: #7db3fa;
+  border-radius: 10px;
+}

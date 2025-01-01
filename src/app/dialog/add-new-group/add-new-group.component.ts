@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { AddFriendsComponent } from '../add-friends/add-friends.component';
 import { FormsModule } from '@angular/forms';
-import { DialogServiceService } from '../../../dialog-service.service';
+import { DialogServiceService } from '../../dialog-service.service';
 
 @Component({
   selector: 'app-add-new-group',

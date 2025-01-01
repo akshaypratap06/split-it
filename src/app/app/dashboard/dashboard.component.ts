@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ExpensedialogComponent } from '../../finalComponent/dialogs/expensedialog/expensedialog.component';
+import { ExpensedialogComponent } from '../../dialog/expensedialog/expensedialog.component';
 import { GroupExpenseDialogComponent } from '../../dialog/group-expense-dialog/group-expense-dialog.component';
 import { UserExpenseDialogComponent } from '../../dialog/user-expense-dialog/user-expense-dialog.component';
 import { SettleUpComponent } from '../../dialog/settle-up/settle-up.component';

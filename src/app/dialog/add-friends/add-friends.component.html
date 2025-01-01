@@ -1,12 +1,11 @@
 <div class="row m-0 mt-2">
-  <div class="col-12 text-center"><h3 class="skyblue">Add Friends</h3></div>
+  <div class="col-12 text-center"><h3 class="darkBlue">Add Friends</h3></div>
 </div>
 <div class="row m-0 mt-2 mb-2">
   <div class="col-12 text-center" style="width: 500px">
     <input
       placeholder="Enter multiple names separated with ;"
-      style="width: 90%; border: 2px solid grey; border-radius: 10px"
-      class="black"
+      style="width: 90%"
       [(ngModel)]="addFriendString"
     />
   </div>
@@ -20,11 +19,7 @@
 }
 <div class="row m-0 mt-2 mb-2">
   <div class="col-12 text-center">
-    <button
-      class="skyblue"
-      style="border: 2px solid skyblue; border-radius: 10px"
-      (click)="submitAddFriendRequest()"
-    >
+    <button class="darkBlueBorder" (click)="submitAddFriendRequest()">
       Submit Request
     </button>
   </div>

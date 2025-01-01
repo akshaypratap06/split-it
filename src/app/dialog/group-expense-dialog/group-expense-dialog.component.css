@@ -1,0 +1,11 @@
+.darkBlueBorder {
+  border: 2px solid #7db3fa !important;
+  color: #7db3fa;
+  border-radius: 10px;
+}
+
+.coralBorder {
+  border: 2px solid #f08080 !important;
+  color: #f08080;
+  border-radius: 10px;
+}

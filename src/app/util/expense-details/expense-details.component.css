@@ -1,0 +1,26 @@
+input:focus {
+  outline: none;
+  border: 2px solid #7db3fa;
+  border-radius: 10px;
+  color: #7db3fa;
+}
+
+input {
+  outline: none;
+  border: 2px solid skyblue;
+  border-radius: 10px;
+  color: skyblue;
+}
+
+.darkBlueBorderOutline {
+  border: 2px solid #7db3fa !important;
+  color: #7db3fa;
+  border-radius: 10px;
+}
+
+.coralBorderOutline {
+  border: 2px solid #f08080 !important;
+  color: white;
+  border-radius: 10px;
+  background-color: #f08080;
+}

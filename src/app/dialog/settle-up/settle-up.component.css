@@ -1,4 +1,12 @@
-.border {
-  border: 10px solid skyblue;
+.coralBorderOutline {
+  border: 2px solid #f08080 !important;
+  color: white;
   border-radius: 10px;
+  background-color: #f08080;
+}
+.darkBlueBorderOutline {
+  border: 2px solid #7db3fa !important;
+  color: white;
+  border-radius: 10px;
+  background-color: #7db3fa;
 }

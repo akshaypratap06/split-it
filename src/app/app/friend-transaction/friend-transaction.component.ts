@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ExpensedialogComponent } from '../../finalComponent/dialogs/expensedialog/expensedialog.component';
+import { ExpensedialogComponent } from '../../dialog/expensedialog/expensedialog.component';
 import { SettleUpComponent } from '../../dialog/settle-up/settle-up.component';
 import { TransactionComponent } from '../transaction/transaction.component';
 import { DialogServiceService } from '../../dialog-service.service';

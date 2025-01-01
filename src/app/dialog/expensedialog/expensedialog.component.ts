@@ -7,8 +7,8 @@ import {
   MatDialogTitle,
 } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
-import { GroupExpenseDialogComponent } from '../../../dialog/group-expense-dialog/group-expense-dialog.component';
-import { UserExpenseDialogComponent } from '../../../dialog/user-expense-dialog/user-expense-dialog.component';
+import { GroupExpenseDialogComponent } from '../group-expense-dialog/group-expense-dialog.component';
+import { UserExpenseDialogComponent } from '../user-expense-dialog/user-expense-dialog.component';
 
 @Component({
   selector: 'app-expensedialog',

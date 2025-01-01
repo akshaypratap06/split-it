@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DialogListComponent } from '../../../util/dialog-list/dialog-list.component';
+import { DialogListComponent } from '../../util/dialog-list/dialog-list.component';
 
 @Component({
   selector: 'app-currency-list',

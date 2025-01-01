@@ -5,7 +5,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { DialogListComponent } from '../dialog-list/dialog-list.component';
-import { CurrencyListComponent } from '../../finalComponent/dialogs/currency-list/currency-list.component';
+import { CurrencyListComponent } from '../../dialog/currency-list/currency-list.component';
 import { UserListComponent } from '../../dialog/user-list/user-list.component';
 import { PayeeDialogComponent } from '../../dialog/payee-dialog/payee-dialog.component';
 import { ChangeDetectionStrategy } from '@angular/core';

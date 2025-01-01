@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ExpensedialogComponent } from '../../finalComponent/dialogs/expensedialog/expensedialog.component';
+import { ExpensedialogComponent } from '../../dialog/expensedialog/expensedialog.component';
 import { SettleUpComponent } from '../../dialog/settle-up/settle-up.component';
 import { MatDialog } from '@angular/material/dialog';
 import { TransactionComponent } from '../transaction/transaction.component';

@@ -1,3 +1,55 @@
 .highlight {
-  color: skyblue;
+  border: 2px solid #f08080 !important;
+  border-radius: 10px;
+  color: #f08080;
+}
+
+.darkBlueBorderOutline {
+  border: 2px solid #7db3fa !important;
+  color: #f08080;
+  border-radius: 10px;
+}
+
+.noHighLight {
+  border: 2px solid grey !important;
+  border-radius: 10px;
+  color: grey;
+}
+
+/* Hide the default checkbox */
+.stylish-checkbox {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid grey;
+  border-radius: 5px; /* Rounded corners */
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Style for the checked state */
+.stylish-checkbox:checked {
+  background-color: #007bff;
+  border-color: #007bff;
+  position: relative;
+}
+
+.stylish-checkbox:checked::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 6px;
+  height: 12px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.coralBorderOutline {
+  border: 2px solid #f08080 !important;
+  color: white;
+  border-radius: 10px;
+  background-color: #f08080;
+  width: 95%;
 }

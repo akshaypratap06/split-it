@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ExpensedialogComponent } from '../../finalComponent/dialogs/expensedialog/expensedialog.component';
+import { ExpensedialogComponent } from '../../dialog/expensedialog/expensedialog.component';
 import { SettleUpComponent } from '../../dialog/settle-up/settle-up.component';
 import { CommonModule } from '@angular/common';
 import { SplitKeyPipePipe } from '../../util/split-key-pipe.pipe';

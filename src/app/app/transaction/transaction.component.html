@@ -1,6 +1,10 @@
-<div class="row m-0" (click)="onClick()">
+<div
+  class="row m-0"
+  (click)="onClick()"
+  [ngClass]="openTab ? 'borderBlue' : 'border2px'"
+>
   <div class="col-8 d-flex flex-column justify-content-around">
-    <h4 class="m-0 skyblue">
+    <h4 class="m-0 darkBlue">
       Desc:
       <span class="grey">{{ transaction.description }}</span>
     </h4>
@@ -18,13 +22,25 @@
   </div>
 </div>
 @if(openTab){
-<hr />
-<div class="row m-0">
+
+<div
+  class="row m-0 mt-1 mb-1"
+  style="
+    border-top: 2px solid grey;
+    border-bottom: 2px solid grey;
+    border-radius: 10px;
+  "
+>
   <div class="col-6 m-0">
     @for(pay of transaction.paid_by | keyvalue ; track pay.key){
     <p>
-      <span style="color: black">{{ pay.key | title }}</span> paid amount
-      <span style="color: black">{{ pay.value }}</span>
+      <span class="skyblue"
+        ><b>{{ pay.key | title }}</b></span
+      >
+      paid amount
+      <span class="skyblue"
+        ><b>{{ pay.value }}</b></span
+      >
     </p>
     }@empty {
     <p>No one paid anything</p>
@@ -33,12 +49,18 @@
   <div class="col-6 m-0 text-end">
     @for(pay of transaction.paid_for | keyvalue ; track pay.key){
     <p>
-      <span style="color: black">{{ pay.key | title }}</span> took amount
-      <span style="color: black">{{ pay.value }}</span>
+      <span class="skyblue"
+        ><b>{{ pay.key | title }}</b></span
+      >
+      took amount
+      <span class="skyblue"
+        ><b>{{ pay.value }}</b></span
+      >
     </p>
     }@empty {
     <p>No one took anything</p>
     }
   </div>
 </div>
+
 }
