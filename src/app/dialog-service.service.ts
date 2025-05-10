@@ -172,7 +172,7 @@ export class DialogServiceService {
     this.http
       .patch<any>('http://localhost:8080/v1/add-friend-to-user', {
         user_name: this.userName,
-        friend: friendNames[0],
+        friend: friendNames,
       })
       .subscribe({
         next: (response) => {
